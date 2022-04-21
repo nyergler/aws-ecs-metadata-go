@@ -31,7 +31,8 @@ type ContainerMetadataV4 struct {
 	DesiredStatus string `json:"DesiredStatus"`
 	KnownStatus   string `json:"KnownStatus"`
 	Limits        struct {
-		CPU int `json:"CPU"`
+		CPU    int `json:"CPU"`
+		Memory int `json:"Memory"`
 	} `json:"Limits"`
 	CreatedAt time.Time `json:"CreatedAt"`
 	StartedAt time.Time `json:"StartedAt"`
@@ -47,6 +48,8 @@ type ContainerMetadataV4 struct {
 		PrivateDNSName           string   `json:"PrivateDNSName"`
 		SubnetGatewayIpv4Address string   `json:"SubnetGatewayIpv4Address"`
 	} `json:"Networks"`
+	ContainerARN string `json:"ContainerARN"`
+	LogDriver    string `json:"LogDriver"`
 }
 
 type TaskMetadataV4 struct {
